@@ -1,0 +1,6 @@
+def denarytobinary(num):
+    if num >1:
+        denarytobinary(num // 2)
+    print(num % 2, end=' ')
+number = int(input("Input a number: "))
+denarytobinary(number)
