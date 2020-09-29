@@ -1,0 +1,7 @@
+while True:
+    CHAR = ('2')
+    if CHAR == (CHAR[0:1]):
+        break
+    else:
+        print("Not CHAR")
+print (CHAR)
