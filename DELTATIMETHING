@@ -1,0 +1,11 @@
+
+from datetime import datetime, timedelta 
+
+q,e,r = input("What is the date now: ").split()
+w,d,v = input("When is the next date: ").split()
+    
+date = datetime(int(q),int(e),int(r))
+future_date = datetime(int(w),int(d),int(v))
+
+difference = future_date - date
+print("Project Length:",difference)
