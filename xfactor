@@ -1,0 +1,15 @@
+import random
+Artists = ["Qadar", "Abdullah", "Fardulla", "Coldplay", "Baptiste", "Chris", "Vidu", "Vishnu", "Parth", "Tanishq"]
+song= []
+row= []
+print ("Fardeens Playlist")
+for i in range (1,11):
+    song.append(i)
+print (song)
+Playlist = (Artists,song)
+for i in range (10):
+    row.append(Artists[i]) 
+    row.append(song)
+    print(row)
+    row= []
+    
