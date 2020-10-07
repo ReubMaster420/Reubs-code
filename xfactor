@@ -1,15 +1,31 @@
 import random
 Artists = ["Qadar", "Abdullah", "Fardulla", "Coldplay", "Baptiste", "Chris", "Vidu", "Vishnu", "Parth", "Tanishq"]
+#just makes an array of 1 to 10 cuz i couldnt be bothered to write it out
 song= []
+#array for 2D array
 row= []
-print ("Fardeens Playlist")
+#List that creates validated artists
+songs = []
+
+#This part only makes a 2D array and is not actually needed for the task
+print ("My Playlist")
 for i in range (1,11):
     song.append(i)
-print (song)
 Playlist = (Artists,song)
 for i in range (10):
     row.append(Artists[i]) 
     row.append(song)
     print(row)
     row= []
-    
+
+#This part actually does the validation and makes the queue
+songs.append(random.choice(Artists))
+print ("New song queue!")
+for i in range(1,11):
+    while True:
+        g = random.choice(Artists)
+        if g != songs[i-1]:
+            songs.append(g)
+            print ("Artist:",g,"|   Song:", random.randint(1,10))
+            break
+            
