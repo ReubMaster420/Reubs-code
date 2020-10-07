@@ -1,0 +1,16 @@
+import random
+characters = ["*","."]
+char = []
+nn = random.randint(2,8)
+mm = random.randint(2,8)
+char.append(characters[1])
+for i in range (mm-1):
+    char.append(random.choice(characters))
+print (char)
+char = []
+for i in range (nn):
+    for i in range (mm):
+        char.append(random.choice(characters))
+    print (char)
+    char = []
+
