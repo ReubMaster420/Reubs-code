@@ -1,0 +1,12 @@
+vowels = "a","e","i","o","u","A","E","I","O","U"
+def haha():
+    v = []
+    str1 = "" 
+    for i in range (len(g)):
+        if g[i] in vowels:
+            v.append("haha") 
+        else:
+            v.append(g[i])
+    return (str1.join(v)) 
+g = input("Input a string:") 
+print (haha())
