@@ -1,0 +1,14 @@
+word = "spoon" #should be sospopoonon
+cons = [ 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+newword = []
+for i in range (len(word)):
+    if (word [i]) in cons:
+        newword.append(word [i])
+        newword.append("o")
+        newword.append(word [i])
+    else:
+        newword.append(word[i])
+def listToString(newword):  
+    str1 = ""   
+    return (str1.join(newword)) 
+print(listToString(newword))  
