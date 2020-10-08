@@ -1,0 +1,6 @@
+def histogram():
+    for i in range (len(g)):
+        print (g[i]*"*")
+    return g
+g = [5,2,4]
+print (histogram())
