@@ -1,0 +1,17 @@
+q = []
+z = []
+new = []
+word = input("Input word to encrypt:")
+z.append("z")
+for i in range (97,123):
+    q.append(chr(i))
+for i in range (97,122):
+    z.append(chr(i))
+for i in range (len(word)):
+    y = (word[i])
+    str1 = ""
+    for i in range (0,26):
+        if y == q[i]:
+            new.append(z[i])
+print ("Original word is", word)          
+print ("Encrypted n dat:", str1.join(new))
