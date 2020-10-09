@@ -1,6 +1,10 @@
 import random
-word = ["CREATOR", "KRATOS" , "KEBAB" , "KOREA", "KIMCHI" , "ALABAMA", "FARDEEN", "FALUJAH", "GARDEN" , "ABELA", "RHIBOSOME", "CHRIS" , "PATRIOT" , "QUEBEC"]
+wordstring = []
+yinputstring = []
+count = 4
 new = []
+likeness = 0
+word = ["CREATOR", "KRATOS" , "KEBAB" , "KOREA", "KIMCHI" , "ALABAMA", "FARDEEN", "FALUJAH", "GARDEN" , "ABELA", "RHIBOSOME", "CHRIS" , "PATRIOT" , "QUEBEC"]
 for i in range (8):
     while True:
         q = random.choice(word)
@@ -10,4 +14,28 @@ for i in range (8):
         else:
             next
 print ("Words are", new)
-word = random.choice(new)
+worde = random.choice(new)
+for i in range (len(worde)):
+    wordstring.append(worde[i])
+for i in range (4):
+    while True:
+        print ("You have",count,"Attempts. Input the correct word from list.")
+        yinput = input("INPUT:")
+        if yinput not in new:
+            print("Please input a word from the list!")
+        else:
+            break
+    if yinput == worde:
+        print ("You won!")
+        break
+    for i in range (len(yinput)):
+        if yinput[i] not in yinputstring:
+            yinputstring.append(yinput[i])
+    for i in range (len(yinputstring)):
+        if yinput[i] in wordstring:
+            likeness = likeness + 1
+    print ("Word has likeness:", likeness)
+    likeness = 0
+    yinputstring = []
+    count = count - 1
+print ("The word was", worde)
