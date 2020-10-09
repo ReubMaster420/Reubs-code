@@ -1,0 +1,13 @@
+import random
+word = ["CREATOR", "KRATOS" , "KEBAB" , "KOREA", "KIMCHI" , "ALABAMA", "FARDEEN", "FALUJAH", "GARDEN" , "ABELA", "RHIBOSOME", "CHRIS" , "PATRIOT" , "QUEBEC"]
+new = []
+for i in range (8):
+    while True:
+        q = random.choice(word)
+        if q not in new:
+            new.append(q)
+            break
+        else:
+            next
+print ("Words are", new)
+word = random.choice(new)
