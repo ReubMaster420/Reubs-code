@@ -1,0 +1,33 @@
+import random
+roun = 0
+score = 0
+long = int(input("How many questions do you want:"))
+for i in range (long):
+    roun = roun + 1
+    print ("Round", roun,"out of", long )
+    q = random.randint (1,34)
+    a1 = (bin(q)[2::])
+    a2 = (hex(q)[2::])
+    while True:
+        print (q)
+        print ("What is this number in binary?")
+        question = input("->:")
+        if question == a1:
+            score = score + 100
+            print ("Your score is now:", score)
+            break
+        else:
+            score = score - 50
+            print ("Your score is now:", score)
+    while True:
+        print (q)
+        print ("What is this number in hex?")
+        question2 = input("->:")
+        if question2 == a2:
+            score = score + 100
+            print ("Your score is now:", score)
+            break
+        else:
+            score = score - 50
+            print ("Your score is now:", score)
+print ("Final score:", score)
