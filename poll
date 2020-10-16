@@ -1,0 +1,53 @@
+import random
+voters = 6
+rank1 = []
+rank2 = []
+rank3 = []
+Bobpoints = 0
+Apoints = 0
+Cpoints = 0
+Candidate = ["Alice","Bob","Chris"]
+for i in range (voters):
+    q = random.choice(Candidate)
+    rank1.append(q)
+    while True:
+        c = random.choice(Candidate)
+        if rank1[i] != c:
+           rank2.append(c)
+           break
+    while True:
+        d = random.choice(Candidate)
+        if rank1[i] != d and rank2[i] != d:
+            rank3.append(d)
+            break
+print (rank1)
+print (rank2)
+print (rank3)
+for i in range (6):
+    if rank1[i] == ("Bob"):
+        Bobpoints = Bobpoints + 3
+    if rank1[i] == ("Alice"):
+        Apoints = Apoints + 3
+    if rank1[i] == ("Chris"):
+        Cpoints = Cpoints + 3
+    if rank2[i] == ("Bob"):
+        Bobpoints = Bobpoints + 2
+    if rank2[i] == ("Alice"):
+        Apoints = Apoints + 2
+    if rank2[i] == ("Chris"):
+        Cpoints = Cpoints + 2
+    if rank3[i] == ("Bob"):
+        Bobpoints = Bobpoints + 1
+    if rank3[i] == ("Alice"):
+        Apoints = Apoints + 1
+    if rank3[i] == ("Chris"):
+        Cpoints = Cpoints + 1
+print (Cpoints)
+print (Apoints)
+print (Bobpoints)
+if Bobpoints > Apoints and Bobpoints > Cpoints:
+    print ("Bob wins")
+elif Apoints > Bobpoints:
+    print ("Alice wins")
+else:
+    print ("Chris wins")
