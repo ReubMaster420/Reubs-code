@@ -1,95 +1,76 @@
-x = []
-z =[]
-y = []
-g =0
-u = 0
-c = 1
-odd = [1,3,5,7,9]
-gno = [-1]
-uno = [-1]
-bad = 0
-for i in range (3):
-    x.append(' ')
-    z.append(' ')
-    y.append(' ')
-print (x)
-print (z)
-print (y)
-while True:
-    if c in odd:
-        print ("Player 1's Turn!")
-        while True:
-            g = int(input("X coordinate:"))-1
-            u = int(input("Y coordinate:"))-1
-            for i in range (len(uno)):
-                if g == gno[i] and u == uno[i]:
-                    bad = 1
-            if bad == 1:
-                print ("Invalid position, input again")
-                bad = 0
-            else:
-                gno.append(g)
-                uno.append(u)
-                bad = 0
-                break
-        for i in range (3):#Con
-            if u == 0:
-                for i in range(3):
-                    if g == i:
-                        x[i] = ('x')
-            if u == 1:
-                for i in range(3):
-                    if g == i:
-                        z[i] = ('x')
-            if u == 2:
-                for i in range(3):
-                    if g == i:
-                        y[i] = ('x')
-    else:
-        print ("Player 2's Turn!")
-        while True:
-            g = int(input("X coordinate:"))-1
-            u = int(input("Y coordinate:"))-1
-            for i in range (len(uno)):
-                if g == gno[i] and u == uno[i]:
-                    bad = 1
-            if bad == 1:
-                print ("Invalid position, input again")
-                bad = 0
-            else:
-                gno.append(g)
-                uno.append(u)
-                bad = 0
-                break
-        for i in range (3):#Con
-            if u == 0:
-                for i in range(3):
-                    if g == i:
-                        x[i] = ('o')
-            if u == 1:
-                for i in range(3):
-                    if g == i:
-                        z[i] = ('o')
-            if u == 2:
-                for i in range(3):
-                    if g == i:
-                        y[i] = ('o')
-    
-    print (x)
+count = 0
+x = [" "," "," "] 
+y = [" "," "," "] 
+z = [" "," "," "]
+def board():
+    print (x) 
+    print (y) 
     print (z)
-    print (y)
-    
-    c = c + 1
-    if x == ['x','x','x'] or z == ['x','x','x'] or y == ['x','x','x']:
-        print ("player 1 wins")
-        print (x)
-        print (z)
-        print (y)
+board()
+while True:
+    if (count%2) == 0:
+        print("Player 1's turn")
+    else:
+        print("Player 2's turn")
+    xinput = int(input("X Coord:"))
+    yinput = int(input("Y Coord:"))
+    if yinput == 0:
+        for i in range (3):
+            if xinput == i:
+                if x[i] == " ":
+                    if (count%2) == 0:
+                        x[i] = "x"
+                        count = count + 1
+                    else:
+                        x[i] = "o"
+                        count = count + 1
+    elif yinput == 1:
+        for i in range (3):
+            if xinput == i:
+                if y[i] == " ":
+                    if (count%2) == 0:
+                        y[i] = "x"
+                        count = count + 1
+                    else:
+                        y[i] = "o"
+                        count = count + 1
+    elif yinput == 2:
+        for i in range (3):
+            if xinput == i:
+                if z[i] == " ":
+                    if (count%2) == 0:
+                        z[i] = "x"
+                        count = count + 1
+                    else:
+                        z[i] = "o"
+                        count = count + 1
+    #win factor
+    if x == ["x","x","x"] or y == ["x","x","x"] or z == ["x","x","x"]:
+        print ("Player 1 wins")
         break
-    if x == ['o','o','o'] or z == ['o','o','o'] or y == ['o','o','o']:
-        print ("player 2 wins")
+    if x == ["o","o","o"] or y == ["o","o","o"] or z == ["o","o","o"]:
+        print ("Player 2 wins")
         break
     for i in range (3):
-        if x[i] == ['x'] and z[i] == ['x'] and y[i] == ['x']:
+        if x[i] == ["x"] and y[i] == ["x"] or z[i] == ["x"]:
+            print ("Player 1 wins")
+            break
+        if x[i] == "o" and y[i] == "o" and z[i] == "o":
+            print ("Player 2 wins")
+            break
+    if x[0] == ["x","x","x"] or y[1] == ["x","x","x"] or z[2] == ["x","x","x"]:
+        print ("Player 1 wins")
+        break
+    if x[2] == ["x","x","x"] or y[1] == ["x","x","x"] or z[0] == ["x","x","x"]:
+        print ("Player 1 wins")
+        break
+    if x[0] == ["o","o","o"] or y[1] == ["o","o","o"] or z[2] == ["o","o","o"]:
+        print ("Player 2 wins")
+        break
+    if x[2] == ["o","o","o"] or y[1] == ["o","o","o"] or z[0] == ["o","o","o"]:
+        print ("Player 2 wins")
+        break
+    print (x[1])
+    board()
 
-
+board()
