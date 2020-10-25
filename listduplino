@@ -1,0 +1,10 @@
+liste = ["Chris", "Chris", "Kebab", "Lmao"]
+list2 = []
+def duplino():
+    list2 = []
+    for i in range(len(liste)):
+        if liste[i] not in list2:
+            list2.append(liste[i])
+    print(list2)
+duplino()
+    
