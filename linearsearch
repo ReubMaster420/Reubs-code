@@ -1,0 +1,9 @@
+List = []
+for i in range(97,123):
+    List.append(chr(i))    
+print (List)
+Whatuwan = input("What do you want to find in the list:")
+if Whatuwan in List:
+    print ("Item in list")
+else:
+    print ("Item could not be found")
