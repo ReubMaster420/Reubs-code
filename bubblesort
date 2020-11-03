@@ -1,9 +1,9 @@
 Array = [3 , 2 , 5 ,10,  3 , 50 , 4 , 8 , 6,] 
-while True:
+flag = True
+while flag==True:
+    flag=False
     for i in range(len(Array)-1):
-        if Array[i] > Array[i+1]:
-            temp = Array[i]
-            nexto = Array[i+1]
-            Array[i] = nexto
-            Array[i+1] = temp
-            print (Array)
+        for j in range(len(Array)-i-1):
+                if Array[j] > Array[j+1] : 
+                    Array[j], Array[j+1] = Array[j+1], Array[j] 
+print (Array)
