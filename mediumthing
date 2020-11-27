@@ -1,0 +1,23 @@
+count = 0
+jesu = 0
+with open ('mam.txt','r') as whole_file:
+    for line in whole_file:
+        if ('If') in (line):
+            count = count + 1
+with open("mam.txt","a") as writing_file:
+        line_to_write = "\mam.txt uses the word 'if'" + str(count) + " times"
+        writing_file.write(line_to_write)
+print ("'If' appears in mam.txt", count,"times")
+
+with open ('if.txt','r') as whole_file:
+    for line in whole_file:
+        if ('If') in (line):
+            jesu = jesu + 1
+with open("if.txt","a") as writing_file:
+        line_to_write = "\if.txt uses the word 'if'" + str(jesu) + " times"
+        writing_file.write(line_to_write)
+print ("'If' appears in if.txt", jesu,"times")
+if count > jesu:
+    print("Mam.txt has more Ifs")
+else:
+    print("If.txt has more Ifs")
