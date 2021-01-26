@@ -1,0 +1,25 @@
+Eatmore = 2800
+foods = []
+calories = []
+while True:
+    food = input("What have you eaten today?:")
+    foods.append(food)
+    while True:
+        calorie = int(input("How many calories did it have?:"))
+        if 0 < calorie < 2800:
+            break
+        else:
+            print ("That dont even make sense")
+    calories.append(calorie)
+    Eatmore = Eatmore - calorie
+    print("You need to have",Eatmore,'more calories')
+    ed = input("Do you want to end the day?Y/N:")
+    if ed == "Y":
+        break
+    else:
+        print("next food")
+for i in range (len(foods)):
+    print("Food",i,"|",foods[i],"| Calories",calories[i])
+
+
+
