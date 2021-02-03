@@ -1,0 +1,22 @@
+import random
+username = input("Input name:")
+question =  [["What is a stack:","A - This follows a FILO methodology","B - This follows a FIFO methodology","C - This follows a FIFA methodology","D - This follows a Xi Jinping Methodology","A"],["What is a queue:","A - This follows a FILO methodology","B - This follows a FIFO methodology","C - This follows a FIFA methodology","D - This follows a Abu Hajar Methodology","B"],["What does the pop() function do:","A - This increments the stacknum by 1","B - this decrements the stack num by 1","C - This takes the element that is next to come out, out","D - This takes out all the addresses","C"],["What does the push function do:","A - This put an address into the storage method","B - This puts 10 addresses in","C - The ACU is incremented by 1","D - The ACU is decremented by 1","A"]]
+score = 0
+random.shuffle(question)
+for i in range(len(question)):
+    print (question[i][0])
+    for j in range(1,5):
+      print (question[i][j])
+    Answer = input("Answer:")
+    if Answer in question[i]:
+        score = score + 100
+        print("Correct, your score:",score)
+    else:
+        print("Oops thats wrong the right answer was:",(question[i][5]))
+print ("Your final score was", score)
+f = open("highscore", "a")
+f.write(username)
+f.write(" : ")
+f.write(str(score))
+f.write("\n")
+f.close()
