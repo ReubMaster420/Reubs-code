@@ -1,0 +1,21 @@
+higher = 111
+lower = 1
+mid = 55
+dif = 0
+
+print (55)
+while True:
+    yeah = input("Is it higher, lower or right: ")
+    if yeah == "higher":
+        lower = mid
+        dif = higher - mid
+        mid = int(lower + dif/2)
+        print(mid)
+    if yeah == 'lower':
+        higher = mid
+        dif = mid - lower
+        mid = int(lower + dif/2)
+        print(mid)
+    if yeah == 'right':
+        print("lesgo")
+        break
