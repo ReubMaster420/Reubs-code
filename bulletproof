@@ -1,0 +1,30 @@
+from random import randint
+my_list = []
+
+def list_generator(size):
+    for i in range(size):
+        new_num = randint(0,1000)
+        while new_num in my_list:
+            new_num = randint(0,1000)
+        my_list.append(new_num)
+
+
+def binary_search(my_list, find_me):
+    l=0
+    r = len(my_list)-1
+    while l <= r:
+        mid = l + (r - l) // 2;
+        if my_list[mid] == find_me:
+            return mid
+        elif my_list[mid] < find_me:
+            l = mid + 1
+        else:
+            r = mid - 1
+    return False
+
+list_generator(500)
+print(my_list)
+print (binary_search(my_list, 40))
+my_list.sort()
+print(my_list)
+print (binary_search(my_list, 40))
