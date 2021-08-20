@@ -1,0 +1,14 @@
+def insertion(list):
+    for i in range(1, len(list)):
+
+        shift = list[i]
+        j = i - 1
+        while j >= 0 and shift < list[j]:
+            list[j + 1] = list[j]
+            j -= 1
+        list[j + 1] = shift
+
+list = [12 , 48, 3 , 2 , 1 , 16]
+insertion(list)
+for i in range(len(list)):
+    print("% d" % list[i])
