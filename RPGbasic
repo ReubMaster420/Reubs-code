@@ -1,0 +1,48 @@
+import random
+class Character:
+    def __init__(self):
+        self.name = ""
+        self.attack = 0
+        self.defence = 0
+        self.__health = 0 #Demo private attribute
+        self.experience = 0
+        self.racistlvl = 0
+
+    def print_basics(self):
+        print("\nName:       ",self.name)
+        print("attack:     ",self.attack)
+        print("defence     ",self.defence)
+        print("health:     ",self.__health)
+        print("experience: ",self.experience)
+        print("racistlvl: ",self.racistlvl)
+
+    def print_me(self):
+        self.print_basics()
+    def print_intro(self):
+        print('This is an exciting story')
+
+class wizard(Character):
+    def __init__(self):
+        Character.__init__(self) #need to add in parent classes
+        self.magic = 30
+
+    def print_me(self):
+        self.print_basics()
+        print("magic       ",self.magic)
+
+class knight(Character):
+    def __init__(self):
+        Character.__init__(self) #need to add in parent classes
+        self.armour = 30
+
+    def print_me(self):
+        self.print_basics()
+        print("armour:      ",self.armour)
+
+
+
+Quen = knight()
+Quen.name = "Quen"
+Quen.racistlvl = random.randint(10,5000)
+Quen.attack = random.randint(100,200)
+Quen.print_me()
