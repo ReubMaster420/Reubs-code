@@ -1,8 +1,8 @@
 class Node:
-    def __init__(self,DataValue, Left=None, Right=None):
+    def __init__(self,DataValue, LeftPointer=None, RightPointer=None):
         self.DataValue = DataValue
-        self.LeftPointer = Left
-        self.RightPointer = Right
+        self.LeftPointer = LeftPointer
+        self.RightPointer = RightPointer
 
 BinaryTree = []
 
@@ -20,21 +20,20 @@ def CreateTree(NodeData):
 def AttachLeft(NodeData, ParentNode):
     global NextNode
     BinaryTree[NextNode].DataValue = NodeData
-    BinaryTree[ParentNode].Left = NextNode
+    BinaryTree[ParentNode].LeftPointer = NextNode
     NextNode = NextNode + 1
 
 def AttachRight(NodeData, ParentNode):
     global NextNode
     BinaryTree[NextNode].DataValue = NodeData
-    BinaryTree[ParentNode].Right = NextNode
+    BinaryTree[ParentNode].RightPointer = NextNode
     NextNode = NextNode + 1
     
 
-def print_tree(Node, BinaryTree):
-    if BinaryTree is None: return
-    print(BinaryTree.DataValue, end=" ")
-    print_tree(BinaryTree.Left)
-    print_tree(BinaryTree.Right)
+def print_tree(BinaryTree, Pointer):
+    while Pointer != None:
+        print(BinaryTree[Pointer].DataValue)
+        Pointer = BinaryTree[Pointer].LeftPointer
 
 CreateTree("Red")
 AttachLeft("Blue", 0)
@@ -49,5 +48,5 @@ AttachLeft("Pink", 7)
 AttachLeft("Grey", 9)
 AttachRight("Orange", 9)
 
-print_tree(Node, BinaryTree)
+print_tree(BinaryTree, 0)
 
