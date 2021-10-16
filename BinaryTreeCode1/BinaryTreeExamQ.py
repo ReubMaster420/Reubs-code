@@ -35,6 +35,18 @@ def print_tree(BinaryTree, Pointer):
         print(BinaryTree[Pointer].DataValue)
         Pointer = BinaryTree[Pointer].LeftPointer
 
+def postorderleafchecker(BinaryTree, Pointer):
+    while Pointer != None:
+        if BinaryTree[BinaryTree[Pointer].LeftPointer] == -1:
+            if BinaryTree[BinaryTree[Pointer].RightPointer] == -1:
+                print(BinaryTree[Pointer].DataValue)
+        postorderleafchecker(BinaryTree[Pointer].LeftPointer)
+        postorderleafchecker(BinaryTree[Pointer].RIghtPointer)
+
+
+
+
+
 CreateTree("Red")
 AttachLeft("Blue", 0)
 AttachRight("Green", 0)
@@ -48,5 +60,5 @@ AttachLeft("Pink", 7)
 AttachLeft("Grey", 9)
 AttachRight("Orange", 9)
 
-print_tree(BinaryTree, 0)
+postorderleafchecker(BinaryTree, 0)
 
