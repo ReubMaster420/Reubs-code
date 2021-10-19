@@ -7,7 +7,6 @@ class Character:
         self.__health = 0 #Demo private attribute
         self.experience = 0
         self.racistlvl = 0
-
     def print_basics(self):
         print("\nName:       ",self.name)
         print("attack:     ",self.attack)
@@ -15,21 +14,15 @@ class Character:
         print("health:     ",self.__health)
         print("experience: ",self.experience)
         print("racistlvl:  ",self.racistlvl)
-    
-
     def setter(self,name):
         self.name = name
         self.attack = random.randint(10,20)
         self.defence = random.randint(10,20)
         self.__health = random.randint(10,20)
-
     def health_getter(self):
         return self.__health
-
-
     def print_me(self):
         self.print_basics()
-
     def print_intro(self):
         print('This is an exciting story')
 
@@ -37,17 +30,14 @@ class wizard(Character):
     def __init__(self):
         Character.__init__(self) #need to add in parent classes
         self.magic = 0
-
     def setter(self,name):
         self.name = name
         self.attack = random.randint(20,30)
         self.defence = random.randint(20,30)
         self.__health = random.randint(20,30)
         self.magic = 30
-
     def health_getter(self):
         return self.__health
-
     def print_me(self):
         self.print_basics()
         print("magic:      ",self.magic)

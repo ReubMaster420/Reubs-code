@@ -1,51 +1,106 @@
 import random
 class Crop:
     def __init__(self, growthrate, lightneed, waterneed):
-        self.__growth = 0
-        self.__daysgrowing = 0
-        self.__growthrate = growthrate
-        self.__lightneed = lightneed
-        self.__waterneed = waterneed
-        self.__status = "Seed"
-        self.__type = "Generic"
+        self._growth = 0
+        self._daysgrowing = 0
+        self._growthrate = growthrate
+        self._lightneed = lightneed
+        self._waterneed = waterneed
+        self._status = "Seed"
+        self._type = "Generic"
     def needs(self):
-        print('Light needed: ', self.__lightneed)
-        print('Water needed: ', self.__waterneed)
+        print('Light needed: ', self._lightneed)
+        print('Water needed: ', self._waterneed)
     def report(self):
         print('---------------------------------')
         print("Status Report.")
-        print("Type        : ", self.__type)
-        print("Status      : ", self.__status)
-        print("Growth      : ", self.__growth)
-        print("Days Growing: ",  self.__daysgrowing)
+        print("Type        : ", self._type)
+        print("Status      : ", self._status)
+        print("Growth      : ", self._growth)
+        print("Days Growing: ",  self._daysgrowing)
         print('---------------------------------')
     def update_status(self):
-        if self.__growth == 0:
-            self.__status = "Seed"
-        elif self.__growth > 0 and self.__growth <= 5:
-            self.__status = "Seedling"
-        elif self.__growth > 5 and self.__growth <= 10:
-            self.__status = "Young"
-        elif self.__growth > 10 and self.__growth <= 15:
-            self.__status = "Mature"
-        elif self.__growth > 15:
-            self.__status = "Old"
+        if self._growth == 0:
+            self._status = "Seed"
+        elif self._growth > 0 and self._growth <= 5:
+            self._status = "Seedling"
+        elif self._growth > 5 and self._growth <= 10:
+            self._status = "Young"
+        elif self._growth > 10 and self._growth <= 15:
+            self._status = "Mature"
+        elif self._growth > 15:
+            self._status = "Old"
     def grow(self,light,water):
-        if light >= self.__lightneed and water >= self.__waterneed:
-            self.__growth += self.__growthrate
-        self.__daysgrowing = self.__daysgrowing + 1
+        if light >= self._lightneed and water >= self._waterneed:
+            self._growth += self._growthrate
+        self._daysgrowing += 1
         self.update_status()
 class potato(Crop):
     def __init__(self):
-        super().__init__(self)
-        self.__type == "Potato"
-
-#non Class procedures
+        super().__init__(3,3,3)
+        self._type = "Potato"
+    def grow(self,light,water):
+        if light >= self._lightneed and water >= self._waterneed:
+            if self._status == "Seedling" and water> self._waterneed:
+                self._growth += self._growthrate * 1.5
+            elif self._status == "Young" and water> self._waterneed:
+                self._growth += self._growthrate * 1.25
+            else:
+                self._growth += self._growthrate
+        self._daysgrowing += 1
+        self.update_status()
+class wheat(Crop):
+    def __init__(self):
+        super().__init__(6,8,7)
+        self._type = "Wheat"
+    def grow(self,light,water):
+        if light >= self._lightneed and water >= self._waterneed:
+            if self._status == "Seedling" and water> self._waterneed:
+                self._growth += self._growthrate * 2.5
+            elif self._status == "Young" and water> self._waterneed:
+                self._growth += self._growthrate * 1.8
+            else:
+                self._growth += self._growthrate
+        self._daysgrowing += 1
+        self.update_status()
+#Crop Display Procedure
+def display_menu1():
+    print()
+    print("Which crop would you like to create?")
+    print()
+    print("1. Potato")
+    print("2. Wheat")
+    print()
+    print("Select an option from the menu above")
+def select_option():
+    valid_option = False
+    while not valid_option:
+        try:
+            choice = int(input("Option selected: "))
+            if choice in (1,2):
+                valid_option = True
+            else:
+                print("Please enter a valid option.")
+        except ValueError:
+            print("Please enter a valid option.")
+    return choice
+def create_crop():
+    display_menu1()
+    choice = select_option()
+    if choice == 1:
+        new_crop = potato()
+    elif choice == 2:
+        new_crop = wheat()
+    return new_crop
+def main():
+    new_crop = create_crop()
+    manage_crop(new_crop)
+#non - Class Display procedures
 def manual_grow(Crop):
     print("Now using manual grow.")
     while True:
         light = int(input("Input a light value from 1-10:"))
-        if 1 > light > 10:
+        if light < 1 or light >10:
             print("Light value not within set parameters!")
         else:
             break
@@ -100,12 +155,4 @@ def manage_crop(Crop):
             break
     print()
     print("Thanks for using the crop management program.")
-    
-def mainCrop():
-    new_crop = Crop(5,4,3)
-    manage_crop(new_crop)
-    #potato_crop = potato()
-    #print(potato_crop.report())
-    #manual_grow(potato_crop)
-    #print(potato_crop.report())
-mainCrop()
+main()
