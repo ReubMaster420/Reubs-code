@@ -35,15 +35,12 @@ class Crop:
             self.__growth += self.__growthrate
         self.__daysgrowing = self.__daysgrowing + 1
         self.update_status()
-
 class potato(Crop):
     def __init__(self):
-        super().__init__(1,3,6)
-        self._type = "1"
+        super().__init__(self)
+        self.__type == "Potato"
 
 #non Class procedures
-
-
 def manual_grow(Crop):
     print("Now using manual grow.")
     while True:
@@ -61,8 +58,6 @@ def manual_grow(Crop):
     print("Light value recognised as", light)
     print("Water value recognised as", water)
     Crop.grow(light,water)
-        
-
 def auto_grow(Crop, days):
     print("Now using autogrow.")
     for day in range(days):
@@ -70,7 +65,6 @@ def auto_grow(Crop, days):
         water = random.randint(1,10)
         Crop.grow(light,water)
     print("Auto grow has been used for", days,"days.")
-    
 def display_menu():
     print("1. Grow manually over 1 day.")
     print("2. Autogrow over 30 days.")
@@ -78,7 +72,6 @@ def display_menu():
     print("0. Exit test program.")
     print()
     print("Select an option from the menu above")
-
 def get_menu_choice():
     while True:
         choice = int(input("Input a number from the list(0-3)."))
@@ -87,7 +80,6 @@ def get_menu_choice():
             break
         else:
             print("Input a valid option.")
-
 def manage_crop(Crop):
     print("This is the crop management program.")
     print()
@@ -109,17 +101,11 @@ def manage_crop(Crop):
     print()
     print("Thanks for using the crop management program.")
     
-
-
 def mainCrop():
-    #new_crop = Crop(5,4,3)
-    #manage_crop(new_crop)
-    potato_crop = potato()
-    print(potato_crop.report())
-    manual_grow(potato_crop)
-    print(potato_crop.report())
-
-
-
-
+    new_crop = Crop(5,4,3)
+    manage_crop(new_crop)
+    #potato_crop = potato()
+    #print(potato_crop.report())
+    #manual_grow(potato_crop)
+    #print(potato_crop.report())
 mainCrop()
