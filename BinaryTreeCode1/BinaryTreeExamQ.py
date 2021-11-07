@@ -48,6 +48,7 @@ AttachLeft("Pink", 7)
 AttachLeft("Grey", 9)
 AttachRight("Orange", 9)
 
+
 def counter(BinaryTree, Pointer):
     if BinaryTree[Pointer].LeftPointer == None and BinaryTree[Pointer].RightPointer == None:
         print(BinaryTree[Pointer].DataValue)
