@@ -11,19 +11,29 @@ class Horse_Better:
         return self.Horse_level
     def GetHorseID(self):
         return self.HorseID
-        
-    def SetHorseID(self):
-        while True:
-            try:
-                HorseID = input("Input horse ID:")
-                if 1 <= int(HorseID) <= 256:
-                    self.horseID = HorseID
-                    print("Id has been set to", self.HorseID)
-                    break
-                print("Please input valid ID.")
-            except ValueError:
-                print("Enter an integer")
 
-Horse_Better.SetHorseID()
+def SetHorseID(self):
+    while True:
+            try:
+                HorseID = str(input("Enter your HorseID:"))
+                if int(HorseID) >= 0 and int(HorseID) <= 150:
+                    self.HorseID = HorseID
+                    print(f"Your new horse id is {self.HorseID}!")
+                    break
+                print("Must be below/or 456 and above/or 1!")
+            except ValueError:
+                print('Enter an integer!')
+
+def SetCash(CashInput):
+            try:
+                if int(CashInput) >= 0 and int(CashInput) <= 150:
+                    return True
+                return False
+            except ValueError:
+                print('Enter an integer!')
+
+print(SetCash(0))
+#SetHorseID(Horse_Better)
+
 
 
