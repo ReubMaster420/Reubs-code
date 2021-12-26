@@ -1,0 +1,16 @@
+Atticus,Finch,Male,0142880,931453@models.com,35,Timor-Leste,57,no
+Bonnie,Butler,Female,0105836,332670@models.com,34,Cambodia,39,yes
+Guy,Montag,Male,077300,288735@models.com,21,Philippines,48,yes
+Margaret,Ray,Female,083503,532006@models.com,33,Brunei,40,yes
+Mary,Lennox,Female,042000,496369@models.com,26,Vietnam,47,no
+Zady,Spencer,Female,0296916,541580@models.com,31,Myanmar,39,yes
+Clarissa,Harlowe,Female,074413,965426@models.com,20,Malaysia,37,yes
+Cyrus,Trask,Male,0319993,884066@models.com,17,Indonesia,46,no
+David,Balfour,Male,0277640,714385@models.com,14,Singapore,56,yes
+Nicholas,Nickleby,Male,0221623,171387@models.com,37,Philippines,58,yes
+Augusta,Elton,Male,0245966,123113@models.com,27,Timor-Leste,49,no
+Bruce,Wayne,Male,059530,678340@models.com,29,Brunei,46,no
+Henry,Woodhouse,Male,0234230,321415@models.com,21,Timor-Leste,46,yes
+Julia,Ray,Female,0290490,852567@models.com,38,Laos,35,no
+Petrova,Fossil,Female,0150103,612985@models.com,37,Thailand,42,yes
+Rob,Allen,Male,0314176,776353@models.com,19,Thailand,54,yes
