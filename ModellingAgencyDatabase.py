@@ -52,20 +52,15 @@ def setter(firstname, lastname, gender, Mobile, Email ,Age, Country, Dresssize, 
             Models.append(new)
     else:
         print("Invalid parameters")
+        
 def insertion():
-    countrylist = []
     for i in range(len(Models)):
-        new = Models[i].showcountry()
-        countrylist.append(new)
-    for i in range(len(countrylist)):
-        currentvalue = countrylist[i]
+        currentcountry = Models[i].showcountry()
         currentmodel = Models[i]
         j = i - 1
-        while j >= 0 and currentvalue < countrylist[j]:
-            countrylist[j + 1] = countrylist[j]
+        while j >= 0 and currentcountry < Models[j].showcountry():
             Models[j + 1] = Models[j]
             j -= 1
-        countrylist[j + 1] = currentvalue
         Models[j + 1] = currentmodel
 insertion()
 def mail():
