@@ -43,6 +43,6 @@ def ReadData():
         print("Sorry, could not find the file. Make sure it is in the correct directory. The current directory is",os.getcwd())
 
 ReadData()
-                
+print(Array[1])
 
 
