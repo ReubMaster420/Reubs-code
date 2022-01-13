@@ -1,3 +1,6 @@
+import os
+
+
 class Picture():
     def __init__(self, Description, Width, Height, Colour):
         self.__Description = Description
@@ -14,5 +17,32 @@ class Picture():
         return self.__Colour
     def SetDescription(self, Description):
         self.__Description = Description
+    def SetHeight(self, Height):
+        self.__Height = Height
+    def SetWidth(self, Width):
+        self.__Width = Width
+    def SetColour(self, Colour):
+        self.__Colour = Colour
 
 Array = [Picture for i in range(1,100)]
+
+def ReadData():
+    lines = 0
+    try:
+        with open("Pictures.txt","r") as f:
+            while f != "":
+                f.readline()
+                lines += 1
+            f.seek()
+            for i in range(lines/4):
+                Array[i].SetDescription(f.readline())
+                Array[i].SetWidth(f.readline())
+                Array[i].SetHeight(f.readline())
+                Array[i].SetColour(f.readline())
+    except OSError:
+        print("Sorry, could not find the file. Make sure it is in the correct directory. The current directory is",os.getcwd())
+
+ReadData()
+                
+
+
