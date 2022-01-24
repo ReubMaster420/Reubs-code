@@ -23,18 +23,19 @@ class Picture():
         self.__Width = Width
     def SetColour(self, Colour):
         self.__Colour = Colour
-
+print("HI")
 Array = [Picture for i in range(1,100)]
 
 def ReadData():
     lines = 0
     try:
         with open("Pictures.txt","r") as f:
-            while f != "":
+            print("Opened")
+            if f == " ":
                 f.readline()
-                lines += 1
-            f.seek()
+                lines = lines + 1
             print(lines)
+            f.seek()
             #for i in range(lines/4):
              #   Array[i].SetDescription(f.readline())
                # Array[i].SetWidth(f.readline())
@@ -43,7 +44,5 @@ def ReadData():
     except OSError:
         print("Sorry, could not find the file. Make sure it is in the correct directory. The current directory is",os.getcwd())
 
+
 ReadData()
-
-
-

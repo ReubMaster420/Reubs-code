@@ -2,18 +2,18 @@ import os
 
 
 QueueData = ([" " for i in range(0,20)])
-startpointer = 0
-endpointer = 0
+StartP = 0
+EndP = 0
 
-def Enqueue(item):
-    Flag = False
-    for i in range(len(QueueData)):
-        if QueueData[i] == (" ") and Flag == False:
-            QueueData[i] = item
-            Flag = True
-    return (Flag)
+def Enqueue(DataToAdd, EndP):
+    if(EndP == 20):
+        return False,EndP
+    else:
+        QueueData[EndP] = DataToAdd
+        EndP = EndP +1
+        return True, EndP
 
-def ReadFile():
+def ReadFile(StartP,EndP):
     value = 0
     filenname = input("Enter a file name: ")
     try:
@@ -33,8 +33,16 @@ def ReadFile():
     elif value == 1:
         print("The queue was full")
     return value
+print(ReadFile(StartP,EndP))
 
-print(ReadFile())
+def Remove(StartP,EndP):
+    if EndP - StartP >= 2:
+        concatenated = str(QueueData[StartP])+str(QueueData[EndP])
+        StartP = StartP + 2
+        print(concatenated)
+    else:
+        print("No Items")
+
 
 
 
