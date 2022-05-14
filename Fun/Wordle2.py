@@ -1,4 +1,3 @@
-
 import random
 word_list = []
 def importlist():
@@ -68,7 +67,6 @@ for i in range(6):
             array[x] = word[x]+"*"
         if word[x] == wordoftheday[x]:
             array[x] = word[x]
-
     if word == wordoftheday:
         print(array)
         print("Yeah you right")
