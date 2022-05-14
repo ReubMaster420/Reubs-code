@@ -11,7 +11,7 @@ class employee:
 
 class parttime(employee):
     def __init__(self, name, staffno):
-        employee.__init__(self, name, staffno)
+        super().__init__(name, staffno)
         self.__fullTimeStaff = False
         self.__hoursworked = 0
     def getHoursWorked(self):
