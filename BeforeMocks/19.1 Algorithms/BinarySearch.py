@@ -1,5 +1,5 @@
 Array = [1,2,4,6,7,8,19,29,36,74]
-
+#FOR BINARY SEARCH TO WORK MUST ALREADY BE SORTED
 def binarysearch(find):
     upperbound = (len(Array)-1)
     lowerbound = 0
@@ -13,4 +13,4 @@ def binarysearch(find):
             lowerbound = midpoint + 1 
     return("Not found")
 
-print(binarysearch(500))
+print(binarysearch(19))
