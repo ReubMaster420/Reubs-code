@@ -11,7 +11,7 @@ class rectangle(shape):
         shape.__init__(self)
         self.__length = length
         self.__breadth = breadth
-    def area(self):
+    def area(self): #polymorphism is where methods are redefined for derived classes
         self.__areaValue= self.__length*self.__breadth
         print("Area ", self.__areaValue)
 class circle(shape):

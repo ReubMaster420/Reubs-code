@@ -25,10 +25,10 @@ def additem(newitem):
         SP = 0
     else:
         pointer = SP
-        while LL[pointer].pointer != None:
+        while LL[pointer].pointer != None: #goes through each node until the next is none
             pointer = LL[pointer].pointer
         LL.append(listnode(newitem))
-        LL[pointer].pointer = len(LL)-1
+        LL[pointer].pointer = len(LL)-1 #makes the previous pointer point to the new item
 
 def removeitem(val):
     global SP
@@ -43,20 +43,28 @@ def removeitem(val):
         prev = next
         next = LL[next].pointer
         while not found:
-            if LL[next].data == val:
-                LL[prev].pointer = LL[next].pointer
-                LL[next] = None
+            if LL[next].data == val: #if value found 
+                LL[prev].pointer = LL[next].pointer #makes the previous pointer the pointer for the one ahead (so JUMP)
+                LL[next] = None #makes the value of the None
                 found = True
-            elif LL[next].pointer is not None:
-                prev = next
+            elif LL[next].pointer is not None: #if not at the end of the linked list yet
+                prev = next #updates the pointers by 1
                 next = LL[next].pointer
             else:
-                print ("not in linked list")
+                print ("not in linked list") #if value still not found and got to none item is not in the linked list
 
 additem("Nushie")
+printLL()
+print("-------------------------------------------------------------")
 additem("Kellie")
+printLL()
+print("-------------------------------------------------------------")
 additem("Scarlett")
-removeitem("Nushie")
+printLL()
+print("-------------------------------------------------------------")
+removeitem("Kellie")
+printLL()
+print("-------------------------------------------------------------")
 additem("John")
 
 printLL()
